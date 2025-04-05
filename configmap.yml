@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-env
+data:
+  APP_ENV: "Production"
+  APP_DEBUG: "false"
+
+
+  

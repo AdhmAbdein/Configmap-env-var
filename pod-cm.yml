@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podenv
+  labels:
+    pod: envcm
+spec:
+  containers:
+    - name: cont
+      image: busybox
+      command: [ "sh", "-c", "env && sleep 5000 " ]
+      envFrom:
+        - configMapRef:
+            name: config-env
+  restartPolicy: Never
+#envFrom: Pulls environment variables from external sources, such as a ConfigMap:configMapRef: Refers to the ConfigMap
